@@ -1,5 +1,6 @@
-﻿# ISS---Proposal-Project-Prototype
+﻿# Barangay Connect
 
+Simple website app prototype for barangay residents.
 
 Sample accounts:
 	
@@ -19,4 +20,5 @@ lgu@province.gov <br>
 lgu123
 
 Baranagay of Choice: Sta Cruz, Makati 
+
 
