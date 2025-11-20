@@ -6,16 +6,17 @@ Sample accounts:
 official@barangay.gov <br>
 official123
 
-resident1@gmail.com
+resident1@gmail.com <br>
 resident123
 
-resident2@gmail.com
+resident2@gmail.com <br>
 resident123
 
-brgycpt@gmail.com
+brgycpt@gmail.com <br>
 captain123
 
-lgu@province.gov
+lgu@province.gov <br>
 lgu123
 
 Baranagay of Choice: Sta Cruz, Makati 
+
