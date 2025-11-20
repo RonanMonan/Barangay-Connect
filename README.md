@@ -1,21 +1,16 @@
-# Barangay-Connect
-ISS Proposal Project Prototype
+﻿# ISS---Proposal-Project-Prototype
 
-Sample accounts:
+Report Reading Prototype:
+Official	official@barangay.gov
+	official123
 
-official@barangay.gov <br>
-official123
+For Report Writing Prototype:
+	
+	resident1@gmail.com
+	resident123
+    
+    resident2@gmail.com
 
-resident1@gmail.com <br>
-resident123
+	resident123
 
-resident2@gmail.com <br>
-resident123
-
-brgycpt@gmail.com <br>
-captain123
-
-lgu@province.gov <br>
-lgu123
-
-Barangay of Choice: Sta Cruz, Makati
+Baranagay of Choice: Sta Cruz, Makati 

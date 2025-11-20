@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Official Dashboard | BarangayConnect</title>
+  <style>
+    body { font-family: Arial, sans-serif; background: #f4f4f4; margin: 0; }
+    header.navbar {
+      display:flex; align-items:center; justify-content:space-between;
+      background:#1e73be; color:#fff; padding:10px 20px;
+    }
+    .logo { height:40px; margin-right:12px; }
+    header h1 { margin:0; font-size:20px; font-weight:700; }
+    nav { display:flex; gap:12px; align-items:center; }
+    nav a, .logout { color:#fff; text-decoration:none; font-weight:600; }
+    .logout { background:#e74c3c; border:none; padding:6px 12px; border-radius:6px; cursor:pointer; }
+    .logout:hover { background:#c0392b; }
+
+    main.container { padding:20px; max-width:1100px; margin:0 auto; }
+    h2 { margin-top:0; }
+
+    /* Announcement area */
+    .announcement-box {
+      background:#fff; padding:15px; border-radius:10px;
+      box-shadow:0 2px 6px rgba(0,0,0,0.08); margin-bottom:20px;
+    }
+    .announcement-box input, .announcement-box textarea, .announcement-box button {
+      width:100%; padding:10px; margin:8px 0; border-radius:6px; border:1px solid #ddd;
+      font-family:inherit;
+    }
+    .announcement-box button { background:#1e73be; color:#fff; border:none; padding:10px; cursor:pointer; font-weight:700; }
+    .announcement-box button:hover { background:#155b96; }
+
+    /* Map */
+    #mapViewer { width:100%; height:300px; border-radius:10px; border:0; box-shadow:0 2px 8px rgba(0,0,0,0.12); margin-bottom:18px; }
+
+    /* Reports */
+    .reports-area { margin-top:12px; }
+    #reportsContainer { display:flex; flex-direction:column; gap:12px; }
+    .report-card {
+      background:#fff; padding:14px; border-radius:10px; box-shadow:0 2px 6px rgba(0,0,0,.06);
+    }
+    .report-card img { max-width:150px; border-radius:8px; margin-top:8px; display:block; object-fit:cover; }
+    .status { display:inline-block; padding:4px 8px; border-radius:6px; color:#fff; font-weight:700; }
+    .Pending { background:#f39c12; }
+    .InProgress { background:#3498db; }
+    .Resolved { background:#27ae60; }
+
+    .ann-list { display:flex; flex-direction:column; gap:10px; margin-top:10px; }
+    .ann { background:#fbfdff; border:1px solid #e9f0fb; padding:10px; border-radius:8px; }
+
+    footer { text-align:center; padding:12px; color:#888; font-size:13px; margin-top:24px; }
+  </style>
+</head>
+<body>
+  <header class="navbar">
+    <div style="display:flex;align-items:center">
+      <img src="logo.png" alt="Barangay Logo" class="logo">
+      <h1>BarangayConnect — Official Dashboard</h1>
+    </div>
+    <nav>
+      <a href="resident.html" class="active">Reports</a>
+      <a href="chat.html">Ticket</a>
+      <button id="logoutBtn" class="logout">Logout</button>
+    </nav>
+  </header>
+
+  <main class="container">
+    <!-- Announcement Form (handled by official.js) -->
+    <section class="announcement-box" aria-labelledby="announceHeading">
+      <h3 id="announceHeading">📰 Post Announcement</h3>
+      <!-- ensure these ids match official.js -->
+      <form id="annForm">
+        <input id="annTitle" type="text" placeholder="Announcement title" required />
+        <textarea id="annBody" rows="3" placeholder="Write your announcement..." required></textarea>
+        <button type="submit">Post Announcement</button>
+      </form>
+
+      <div style="margin-top:8px">
+        <small style="color:#555">Announcements posted here will appear for residents automatically.</small>
+      </div>
+    </section>
+
+    <!-- Map viewer -->
+    <h2>🗺️ Map Viewer</h2>
+    <iframe id="mapViewer" src="https://www.google.com/maps?q=Santa+Cruz+Makati&output=embed" loading="lazy"></iframe>
+
+    <!-- Reports -->
+    <h2>📋 Resident Reports</h2>
+    <div class="reports-area">
+      <div id="reportsContainer">
+        <!-- populated by official.js -->
+        <p>Loading reports...</p>
+      </div>
+    </div>
+
+    <!-- Announcements list (also populated by official.js in realtime) -->
+    <h2 style="margin-top:20px">📢 Announcements</h2>
+    <div class="ann-list" id="annList">
+      <!-- populated by official.js via onSnapshot -->
+    </div>
+  </main>
+
+  <footer>
+    <small>BarangayConnect — Official Dashboard</small>
+  </footer>
+
+  <!-- External JS (module) -->
+  <script type="module" src="official.js"></script>
+</body>
+</html>
